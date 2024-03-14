@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+"""module contains floor function"""
 
 
 def floor(n: float) -> float:
