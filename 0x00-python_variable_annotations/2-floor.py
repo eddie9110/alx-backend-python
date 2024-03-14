@@ -2,6 +2,6 @@
 """module contains floor function"""
 
 
-def floor(n: float) -> float:
+def floor(n: float) -> int:
     """function returns the floor value of a float"""
     return int(n // 1)
