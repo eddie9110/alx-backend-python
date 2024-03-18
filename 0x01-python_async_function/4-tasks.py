@@ -9,7 +9,7 @@ async def task_wait_n(n: int, max_delay: int) -> List[float]:
     """
     Args:
         n (int): No. of calls
-        max_delay: 
+        max_delay:
     Return: List of delay times
     """
     tasks_ = [task_wait_random(max_delay) for i in range(n)]
