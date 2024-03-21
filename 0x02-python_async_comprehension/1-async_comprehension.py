@@ -16,7 +16,7 @@ async def async_comprehension() -> List[float]:
     function performs an asynchronous comprehension.
 
     Return: list of floats generated
-    
+
     """
     result = [i async for i in async_generator()]
     return result
