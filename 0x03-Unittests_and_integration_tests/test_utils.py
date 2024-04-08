@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-""" 
+"""
 Script to unit test for utils.access_nested_map
 """
 
@@ -53,3 +53,30 @@ class TestGetJson(unittest.TestCase):
         with patch('requests.get') as m:
             m.return_value = Mocked()
             self.assertEqual(get_json(test_url), test_payload)
+
+
+class TestMemoize(unittest.TestCase):
+    """
+    Test Mmemoize
+    """
+    def test_memoize(self):
+        """tests to mock a_method"""
+
+        class TestClass:
+            """
+            Test Class
+            """
+            def a_method(self):
+                """a_method"""
+                return 42
+
+            @memoize
+            def a_property(self):
+                """a_property"""
+                return self.a_method()
+
+        with patch.object(TestClass, 'a_method') as mock_method:
+            x = TestClass()
+            x.a_property
+            x.a_property
+            mock_method.assert_called_once()
