@@ -50,8 +50,8 @@ class TestGetJson(unittest.TestCase):
                 """method returns test_payload"""
                 return test_payload
 
-        with patch('requests.get') as m:
-            m.return_value = Mock()
+        with patch('requests.get') as mocked_get:
+            mocked_get.return_value = Mocked()
             self.assertEqual(get_json(test_url), test_payload)
 
 
